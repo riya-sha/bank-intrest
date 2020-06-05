@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    int a,d,t,i,k,j,x,y;
+    float m,inr=0,s=0;
+    printf("Iinitial amount:");
+    scanf("%d",&a);
+    printf("No of Years of Depositing(which is less than the Tenure):");
+    scanf("%d",&d);
+    printf("Tenure:");
+    scanf("%d",&t);
+    printf("Intrest Rate:");
+    scanf("%d",&i);
+    
+    x=a*d;
+    m=a;
+    inr=(m*i)/100;
+        m=m+inr;
+        s=s+inr;
+        
+        
+    for(k=1;k<d;k++)
+    {
+         
+        inr=((m+a)*i)/100;
+        m=m+inr+a;
+        s=s+inr;
+        
+    }
+    
+    for (j=0;j<(t-d);j++)
+    {
+        inr=(m*i)/100;
+        m=m+inr;
+        s=s+inr;
+    }
+    
+    printf("You have deposited %d in %d years,after %d years you will get %f out of which interest added is %f.",x,d,t,m,s);
+    
+    return 0;
+}
